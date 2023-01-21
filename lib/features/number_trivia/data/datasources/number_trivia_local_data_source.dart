@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:number_trivia_app/core/constants/app_constants.dart';
+import 'package:number_trivia_app/core/constants/storage_keys.dart';
 import 'package:number_trivia_app/core/error/exceptions.dart';
 import 'package:number_trivia_app/features/number_trivia/data/models/number_trivia_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +23,7 @@ class NumberTriviaLocalDataSourceImpl extends NumberTriviaLocalDataSource {
   @override
   Future<NumberTriviaModel> getLastNumberTrivia() async {
     final jsonString = sharedPreferences.getString(
-      AppConstants.numberTriviaKey,
+      StorageKeys.numberTriviaKey,
     );
     if (jsonString != null) {
       return NumberTriviaModel.fromJson(json.decode(jsonString));
@@ -35,7 +35,7 @@ class NumberTriviaLocalDataSourceImpl extends NumberTriviaLocalDataSource {
   @override
   Future<void> cacheNumberTrivia(NumberTriviaModel numberTriviaModel) async {
     await sharedPreferences.setString(
-      AppConstants.numberTriviaKey,
+      StorageKeys.numberTriviaKey,
       json.encode(numberTriviaModel.toJson()),
     );
   }
