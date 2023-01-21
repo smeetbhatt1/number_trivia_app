@@ -1,7 +1,7 @@
 name: number_trivia_app
-description: A new Flutter project.
+description: Number Trivia App.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -28,7 +28,6 @@ dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
-  mockito: ^5.0.15
   mocktail: ^0.2.0
   
 flutter:
