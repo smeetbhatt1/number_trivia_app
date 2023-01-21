@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:number_trivia_app/core/constants/app_constants.dart';
+import 'package:number_trivia_app/core/constants/storage_keys.dart';
 import 'package:number_trivia_app/core/error/exceptions.dart';
 import 'package:number_trivia_app/features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
 import 'package:number_trivia_app/features/number_trivia/data/models/number_trivia_model.dart';
@@ -30,7 +30,7 @@ void main() {
       final result = await dataSourceImpl.getLastNumberTrivia();
 
       verify(
-          () => mockSharedPreferences.getString(AppConstants.numberTriviaKey));
+          () => mockSharedPreferences.getString(StorageKeys.numberTriviaKey));
       expect(result, equals(tNumberTriviaModel));
     });
 
@@ -42,21 +42,21 @@ void main() {
 
       expect(call, throwsA(const TypeMatcher<CacheException>()));
       verify(
-          () => mockSharedPreferences.getString(AppConstants.numberTriviaKey));
+          () => mockSharedPreferences.getString(StorageKeys.numberTriviaKey));
     });
   });
 
   group('cache number trivia', () {
     test('should call SharedPreferences to cache data', () async {
       when(() => mockSharedPreferences.setString(
-          AppConstants.numberTriviaKey, any())).thenAnswer((_) async => true);
+          StorageKeys.numberTriviaKey, any())).thenAnswer((_) async => true);
 
       await dataSourceImpl.cacheNumberTrivia(tNumberTriviaModel);
 
       final expectedJsonString = json.encode(tNumberTriviaModel.toJson());
 
       verify(() => mockSharedPreferences.setString(
-            AppConstants.numberTriviaKey,
+            StorageKeys.numberTriviaKey,
             expectedJsonString,
           ));
     });

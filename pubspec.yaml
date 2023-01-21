@@ -15,12 +15,14 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
+  flutter_bloc: ^8.1.1
+  get: ^4.6.5
   get_it: ^7.2.0
   http: ^0.13.3
   shared_preferences: ^2.0.16
 
 dev_dependencies:
+  bloc_test: ^9.1.0
   build_runner: ^2.1.2
   dart_code_metrics: ^4.16.0
   flutter_lints: ^2.0.1

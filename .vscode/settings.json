@@ -3,8 +3,10 @@
         "cupertino",
         "dartz",
         "datasources",
+        "Getx",
         "mocktail",
         "nullsafety",
+        "RGBO",
         "usecase",
         "usecases"
     ]
