@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  static const white = Colors.white;
   static MaterialColor brandColor = MaterialColor(0xFF8154F2, _brandSwatch);
 
   static const List<int> _brandRgb = [129, 84, 242];

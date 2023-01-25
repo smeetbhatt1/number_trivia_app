@@ -1,3 +1,4 @@
+import 'package:backdrop/backdrop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:number_trivia_app/core/constants/view_text.dart';
@@ -10,14 +11,20 @@ class NumberTriviaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BackdropScaffold(
+      headerHeight: 128,
       appBar: _appBar,
-      body: _body,
+      frontLayer: _body,
+      backLayer: const NumberTriviaBackLayer(),
     );
   }
 
-  PreferredSizeWidget get _appBar => AppBar(
+  PreferredSizeWidget get _appBar => BackdropAppBar(
         title: const Text(ViewText.numberTrivia),
+        actions: const [
+          BackdropToggleButton(),
+        ],
+        automaticallyImplyLeading: false,
       );
 
   Widget get _body => Padding(

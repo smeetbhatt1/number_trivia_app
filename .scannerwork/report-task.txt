@@ -1,0 +1,6 @@
+projectKey=number_trivia
+serverUrl=http://localhost:9000
+serverVersion=9.7.1.62043
+dashboardUrl=http://localhost:9000/dashboard?id=number_trivia
+ceTaskId=AYXZQL2BSAc-Lxt3HvX6
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYXZQL2BSAc-Lxt3HvX6
