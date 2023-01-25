@@ -1,4 +1,4 @@
-package com.smeetbhatt.number_trivia_app
+package com.smeetbhatt.numberTriviaApp
 
 import io.flutter.embedding.android.FlutterActivity
 
