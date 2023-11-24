@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.smeetbhatt.number_trivia_app">
+    package="com.smeetbhatt.numberTriviaApp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,7 +8,7 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:name=".MainActivity"
+            android:name="com.smeetbhatt.numberTriviaApp.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
